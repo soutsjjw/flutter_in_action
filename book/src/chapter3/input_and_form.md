@@ -404,13 +404,13 @@ Container(
 ```dart
 Form({
   @required Widget child,
-  bool autovalidate = false,
+  AutovalidateMode? autovalidateMode = null,
   WillPopCallback onWillPop,
   VoidCallback onChanged,
 })
 ```
 
-- `autovalidate`：是否自动校验输入内容；当为`true`时，每一个子FormField内容发生变化时都会自动校验合法性，并直接显示错误信息。否则，需要通过调用`FormState.validate()`来手动校验。
+- `AutovalidateMode`：是否自动校验输入内容；当为`AutovalidateMode.always`时，每一个子FormField内容发生变化时都会自动校验合法性，并直接显示错误信息。否则，需要通过调用`FormState.validate()`来手动校验。
 - `onWillPop`：决定`Form`所在的路由是否可以直接返回（如点击返回按钮），该回调返回一个`Future`对象，如果Future的最终结果是`false`，则当前路由不会返回；如果为`true`，则会返回到上一个路由。此属性通常用于拦截返回按钮。
 - `onChanged`：`Form`的任意一个子`FormField`内容发生变化时会触发此回调。
 
@@ -426,7 +426,7 @@ const FormField({
   FormFieldSetter<T> onSaved, //保存回调
   FormFieldValidator<T>  validator, //验证回调
   T initialValue, //初始值
-  bool autovalidate = false, //是否自动校验。
+  AutovalidateMode? autovalidateMode = null, //是否自动校验。
 })
 ```
 
@@ -470,7 +470,7 @@ class _FormTestRouteState extends State<FormTestRoute> {
         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
         child: Form(
           key: _formKey, //设置globalKey，用于后面获取FormState
-          autovalidate: true, //开启自动校验
+          autovalidateMode: AutovalidateMode.always, //开启自动校验
           child: Column(
             children: <Widget>[
               TextFormField(

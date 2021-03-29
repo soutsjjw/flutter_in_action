@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_in_action/routes/router.dart';
-import 'package:flutter_in_action/widgets/page_scaffold.dart';
+import 'package:flutter_in_action/routes/index.dart';
+import 'package:flutter_in_action/widgets/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -82,6 +82,26 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo("路由傳值", (ctx) => RouterTestRoute()),
             ]),
           ),
+          ExpansionTile(
+            title: Text("基礎組件"),
+            children: _generateItem(context, [
+              PageInfo("Context測試", (ctx) => ContextRoute(), withScaffold: false),
+              PageInfo("State生命週期", (ctx) => StateLifeCycle(), withScaffold: false),
+              PageInfo("Widget樹獲取State對象", (ctx) => RetrieveStateRoute(), withScaffold: false),
+              PageInfo("Cupertino組件", (ctx) => CupertinoTestRoute(), withScaffold: false),
+              PageInfo("Widget管理自身狀態", (ctx) => TapboxA(), withScaffold: false),
+              PageInfo("父Widget管理子Widget的狀態", (ctx) => ParentWidget(), withScaffold: false),
+              PageInfo("混合狀態管理", (ctx) => ParentWidgetC(), withScaffold: false),
+              PageInfo("文本、字體樣式", (ctx) => TextRoute()),
+              PageInfo("按鈕", (ctx) => ButtonRoute()),
+              PageInfo("圖片伸縮", (ctx) => ImageAndIconRoute()),
+              PageInfo("單選開關和複選框", (ctx) => SwitchAndCheckBoxRoute()),
+              PageInfo("登入輸入框",(ctx) => LoginTestRoute()),
+              PageInfo("輸入框",(ctx) => FocusTestRoute()),
+              PageInfo("輸入框及表單",(ctx) => FormTestRoute()),
+              PageInfo("進度條", (ctx) => ProgressRoute()),
+            ]),
+          )
         ],
       ),
     );

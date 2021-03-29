@@ -2,51 +2,51 @@
 
 ## 3.4.1 Material组件库中的按钮
 
-Material 组件库中提供了多种按钮组件如`RaisedButton`、`FlatButton`、`OutlineButton`等，它们都是直接或间接对`RawMaterialButton`组件的包装定制，所以他们大多数属性都和`RawMaterialButton`一样。在介绍各个按钮时我们先介绍其默认外观，而按钮的外观大都可以通过属性来自定义，我们在后面统一介绍这些属性。另外，所有Material 库中的按钮都有如下相同点：
+Material 组件库中提供了多种按钮组件如`ElevatedButton`、`TextButton`、`OutlinedButton`等，它们都是直接或间接对`RawMaterialButton`组件的包装定制，所以他们大多数属性都和`RawMaterialButton`一样。在介绍各个按钮时我们先介绍其默认外观，而按钮的外观大都可以通过属性来自定义，我们在后面统一介绍这些属性。另外，所有Material 库中的按钮都有如下相同点：
 
 1. 按下时都会有“水波动画”（又称“涟漪动画”，就是点击时按钮上会出现水波荡漾的动画）。
 2. 有一个`onPressed`属性来设置点击回调，当按钮按下时会执行该回调，如果不提供该回调则按钮会处于禁用状态，禁用状态不响应用户点击。
 
-### RaisedButton
+### ElevatedButton
 
-`RaisedButton` 即"漂浮"按钮，它默认带有阴影和灰色背景。按下后，阴影会变大，如图3-10所示：
+`ElevatedButton` 即"漂浮"按钮，它默认带有阴影和灰色背景。按下后，阴影会变大，如图3-10所示：
 
 ![图3-10](../imgs/3-10.png)
 
-使用`RaisedButton`非常简单，如：
+使用`ElevatedButton`非常简单，如：
 
 ```dart
-RaisedButton(
+ElevatedButton(
   child: Text("normal"),
   onPressed: () {},
 );
 ```
 
-### FlatButton
+### TextButton
 
-`FlatButton`即扁平按钮，默认背景透明并不带阴影。按下后，会有背景色，如图3-11所示：
+`TextButton`即扁平按钮，默认背景透明并不带阴影。按下后，会有背景色，如图3-11所示：
 
 ![图3-11](../imgs/3-11.png)
 
-使用FlatButton也很简单，代码如下：
+使用TextButton也很简单，代码如下：
 
 ```dart
-FlatButton(
+TextButton(
   child: Text("normal"),
   onPressed: () {},
 )
 ```
 
-### OutlineButton
+### OutlinedButton
 
-`OutlineButton`默认有一个边框，不带阴影且背景透明。按下后，边框颜色会变亮、同时出现背景和阴影(较弱)，如图3-12所示：
+`OutlinedButton`默认有一个边框，不带阴影且背景透明。按下后，边框颜色会变亮、同时出现背景和阴影(较弱)，如图3-12所示：
 
 ![图3-12](../imgs/3-12.png)
 
-使用`OutlineButton`也很简单，代码如下：
+使用`OutlinedButton`也很简单，代码如下：
 
 ```dart
-OutlineButton(
+OutlinedButton(
   child: Text("normal"),
   onPressed: () {},
 )
@@ -71,24 +71,24 @@ IconButton(
 
 ### 带图标的按钮
 
-`RaisedButton`、`FlatButton`、`OutlineButton`都有一个`icon` 构造函数，通过它可以轻松创建带图标的按钮，如图3-14所示：
+`ElevatedButton`、`TextButton`、`OutlinedButton`都有一个`icon` 构造函数，通过它可以轻松创建带图标的按钮，如图3-14所示：
 
 ![图3-14](../imgs/3-14.png)
 
 代码如下：
 
 ```dart
-RaisedButton.icon(
+ElevatedButton.icon(
   icon: Icon(Icons.send),
   label: Text("发送"),
   onPressed: _onPressed,
 ),
-OutlineButton.icon(
+OutlinedButton.icon(
   icon: Icon(Icons.add),
   label: Text("添加"),
   onPressed: _onPressed,
 ),
-FlatButton.icon(
+TextButton.icon(
   icon: Icon(Icons.info),
   label: Text("详情"),
   onPressed: _onPressed,
@@ -99,10 +99,10 @@ FlatButton.icon(
 
 ## 3.4.2 自定义按钮外观
 
-按钮外观可以通过其属性来定义，不同按钮属性大同小异，我们以FlatButton为例，介绍一下常见的按钮属性，详细的信息可以查看API文档。
+按钮外观可以通过其属性来定义，不同按钮属性大同小异，我们以TextButton为例，介绍一下常见的按钮属性，详细的信息可以查看API文档。
 
 ```dart
-const FlatButton({
+const TextButton({
   ...  
   @required this.onPressed, //按钮点击回调
   this.textColor, //按钮文字颜色
@@ -129,7 +129,7 @@ const FlatButton({
 代码如下：
 
 ```dart
-FlatButton(
+TextButton(
   color: Colors.blue,
   highlightColor: Colors.blue[700],
   colorBrightness: Brightness.dark,
@@ -144,14 +144,14 @@ FlatButton(
 
 Flutter 中没有提供去除背景的设置，假若我们需要去除背景，则可以通过将背景颜色设置为全透明来实现。对应上面的代码，便是将 `color: Colors.blue` 替换为 `color: Color(0x000000)`。
 
-细心的读者可能会发现这个按钮没有阴影(点击之后也没有)，这样会显得没有质感。其实这也很容易，将上面的`FlatButton`换成`RaisedButton`就行，其它代码不用改（这里 color 也不做更改），换了之后的效果如图3-16所示：
+细心的读者可能会发现这个按钮没有阴影(点击之后也没有)，这样会显得没有质感。其实这也很容易，将上面的`TextButton`换成`ElevatedButton`就行，其它代码不用改（这里 color 也不做更改），换了之后的效果如图3-16所示：
 
 ![图3-16](../imgs/3-16.png)
 
-是不是有质感了！之所以会这样，是因为`RaisedButton`默认有配置阴影：
+是不是有质感了！之所以会这样，是因为`ElevatedButton`默认有配置阴影：
 
 ```dart
-const RaisedButton({
+const ElevatedButton({
   ...
   this.elevation = 2.0, //正常状态下的阴影
   this.highlightElevation = 8.0,//按下时的阴影
