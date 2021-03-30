@@ -117,6 +117,18 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo("對齊及相對定位", (ctx) => AlignRoute()),
             ]),
           ),
+          ExpansionTile(
+            title: Text("容器类组件"),
+            children: _generateItem(context, [
+              PageInfo("填充Padding", (ctx) => PaddingTestRoute()),
+              PageInfo("尺寸限制類容器", (ctx) => SizeConstraintsRoute(), withScaffold: false),
+              PageInfo("DecoratedBox", (ctx) => DecoratedBoxRoute()),
+              PageInfo("Transform", (ctx) => TransformTestRoute()),
+              PageInfo("Container", (ctx) => ContainerTestRoute()),
+              PageInfo("Scaffold、TabBar、底部導航", (ctx) => ScaffoldRoute(), withScaffold: false),
+              PageInfo("Clip", (ctx) => ClipTestRoute()),
+            ]),
+          ),
         ],
       ),
     );
