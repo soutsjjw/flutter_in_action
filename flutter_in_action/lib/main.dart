@@ -101,7 +101,22 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo("輸入框及表單",(ctx) => FormTestRoute()),
               PageInfo("進度條", (ctx) => ProgressRoute()),
             ]),
-          )
+          ),
+          ExpansionTile(
+            title: Text("布局類組件"),
+            children: _generateItem(context, [
+              PageInfo("Row測試", (ctx) => RowTestRoute()),
+              PageInfo("Column居中", (ctx) => CenterColumnRoute()),
+              PageInfo("Column再嵌套Column", (ctx) => ColumnNested()),
+              PageInfo("Column占滿外部Column", (ctx) => ColumnFullExternalColumn()),
+              PageInfo("彈性布局Row、Column", (ctx) => FlexLayoutTestRoute()),
+              PageInfo("流式布局Wrap", (ctx) => WrapTestRoute()),
+              PageInfo("流式布局Flow", (ctx) => FlowTestRoute()),
+              PageInfo("Stack和絕對定位", (ctx) => StackTestRoute()),
+              PageInfo("表格布局", (ctx) => TableRoute()),
+              PageInfo("對齊及相對定位", (ctx) => AlignRoute()),
+            ]),
+          ),
         ],
       ),
     );
