@@ -23,3 +23,4 @@ export 'transform.dart';
 export 'container.dart';
 export 'scaffold.dart';
 export 'clip.dart';
+export 'scrollable.dart';
