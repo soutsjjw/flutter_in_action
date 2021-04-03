@@ -323,7 +323,7 @@ class Consumer<T> extends StatelessWidget {
 
 ```dart
 Consumer<CartModel>(
-  builder: (context, cart)=> Text("总价: ${cart.totalPrice}");
+  builder: (context, cart)=> Text("总价: ${cart.totalPrice}")
 )
 ```
 

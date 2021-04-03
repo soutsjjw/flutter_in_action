@@ -887,6 +887,7 @@ Future<DateTime> _showDatePicker2() {
       return SizedBox(
         height: 200,
         child: CupertinoDatePicker(
+		  backgroundColor: Colors.white,
           mode: CupertinoDatePickerMode.dateAndTime,
           minimumDate: date,
           maximumDate: date.add(
