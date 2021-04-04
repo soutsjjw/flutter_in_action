@@ -190,6 +190,20 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo("通知(Notification)", (ctx) => NotificationRoute()),
             ]),
           ),
+          ExpansionTile(
+            title: Text("自定義組件"),
+            children: _generateItem(context, [
+              PageInfo("GradientButton", (ctx) => GradientButtonRoute()),
+              // PageInfo("Material APP", (ctx) => ScaffoldRoute(),
+              //     withScaffold: false),
+              PageInfo("旋轉容器：TurnBox", (ctx) => TurnBoxRoute()),
+              PageInfo("CustomPaint", (ctx) => CustomPaintRoute()),
+              PageInfo("自繪實例：圓形背景漸變進度條", (ctx) => GradientCircularProgressRoute()),
+              // PageInfo("原始指针事件", (ctx) => PointerRoute()),
+              // PageInfo("自定义UI框架", (ctx) => CustomHome()),
+              // PageInfo("测试", (ctx) => TestRoute()),
+            ]),
+          ),
         ],
       ),
     );
