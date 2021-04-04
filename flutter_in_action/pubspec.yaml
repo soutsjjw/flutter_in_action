@@ -52,6 +52,7 @@ flutter:
   assets:
     - images/avatar.png
     - images/under_the_wave_off_kanagawa.png
+    - images/sea.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

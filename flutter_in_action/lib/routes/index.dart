@@ -32,3 +32,7 @@ export 'color.dart';
 export 'theme.dart';
 export 'future_and_stream_builder.dart';
 export 'dialog.dart';
+export 'pointer.dart';
+export 'gesture.dart';
+export 'drag.dart';
+export 'notification.dart';

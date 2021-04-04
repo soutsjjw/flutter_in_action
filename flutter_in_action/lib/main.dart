@@ -176,6 +176,20 @@ class _MyHomePageState extends State<MyHomePage> {
               PageInfo("對話框", (ctx) => DialogTestRoute()),
             ]),
           ),
+          ExpansionTile(
+            title: Text("事件處理與通知"),
+            children: _generateItem(context, [
+              PageInfo("原生指针事件", (ctx) => PointerRoute()),
+              PageInfo("點擊、雙擊、長按", (ctx) => GestureDetectorTestRoute()),
+              PageInfo("拖動（任意方向）", (ctx) => DragTestRoute()),
+              PageInfo("單一方向拖動", (ctx) => DragVertical()),
+              PageInfo("縮放", (ctx) => ScaleTestRouteState()),
+              PageInfo("GestureRecognizer", (ctx) => GestureRecognizerTestRouteState()),
+              PageInfo("手勢競爭", (ctx) => BothDirectionTestRoute()),
+              PageInfo("手勢衝突", (ctx) => GestureConflictTestRouteState()),
+              PageInfo("通知(Notification)", (ctx) => NotificationRoute()),
+            ]),
+          ),
         ],
       ),
     );
