@@ -204,6 +204,16 @@ class _MyHomePageState extends State<MyHomePage> {
               // PageInfo("测试", (ctx) => TestRoute()),
             ]),
           ),
+          ExpansionTile(
+            title: Text("文件操作與網路請求"),
+            children: _generateItem(context, [
+              PageInfo("文件操作", (ctx) => FileOperationRoute(), withScaffold: false),
+              PageInfo("文件操作（使用shared_preferences）", (ctx) => SharedPreferencesTestRoute(), withScaffold: false),
+              PageInfo("取得網頁內容", (ctx) => HttpTestRoute()),
+              PageInfo("Dio", (ctx) => DioWidgetTestRoute()),
+              PageInfo("WebSocket", (ctx) => WebSocketRoute(), withScaffold: false),
+            ]),
+          ),
         ],
       ),
     );

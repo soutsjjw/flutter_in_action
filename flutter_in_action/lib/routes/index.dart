@@ -41,3 +41,7 @@ export 'turn_box.dart';
 export 'myrichtext.dart';
 export 'custom_paint.dart';
 export 'gradient_circular_progress.dart';
+export 'file.dart';
+export 'http.dart';
+export 'dio.dart';
+export 'websocket.dart';
